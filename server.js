@@ -10,10 +10,8 @@ const PORT = Number(process.env.PORT) || 4000;
 
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "translator")));
-app.use(express.static(path.join(__dirname, "public")));
-// Tell Express to serve root assets from the active process root directory
-app.use(express.static(path.join(process.cwd())));
+app.use(express.static(process.cwd()));
+app.use(express.static(__dirname));
 
 // Point the default route directly using the absolute process working path
 app.get("/", (req, res) => {

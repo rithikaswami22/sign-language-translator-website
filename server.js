@@ -12,21 +12,21 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "translator")));
 app.use(express.static(path.join(__dirname, "public")));
-// Tell Express to serve root assets natively
-app.use(express.static("."));
+// Tell Express to serve root assets from the active process root directory
+app.use(express.static(path.join(process.cwd())));
 
-// Point the default route directly to the local file string
+// Point the default route directly using the absolute process working path
 app.get("/", (req, res) => {
-    res.sendFile("login.html", { root: "." });
+    res.sendFile(path.join(process.cwd(), "login.html"));
 });
 
-// Add explicit fallbacks for your primary interface pages
+// Set up matching fallbacks for your app pages
 app.get("/login.html", (req, res) => {
-    res.sendFile("login.html", { root: "." });
+    res.sendFile(path.join(process.cwd(), "login.html"));
 });
 
 app.get("/home.html", (req, res) => {
-    res.sendFile("home.html", { root: "." });
+    res.sendFile(path.join(process.cwd(), "home.html"));
 });
 
 

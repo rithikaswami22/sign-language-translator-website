@@ -17,6 +17,11 @@ app.use(express.static(__dirname));
 app.get("/", (req, res) => {
     res.sendFile(path.join(process.cwd(), "login.html"));
 });
+// Catch-all route for any HTML file requested by the browser
+app.get("/:page.html", (req, res) => {
+    const filename = req.params.page + ".html";
+    res.sendFile(path.join(process.cwd(), filename));
+});
 
 // Set up matching fallbacks for your app pages
 app.get("/login.html", (req, res) => {

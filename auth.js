@@ -25,6 +25,7 @@ if (loginForm) {
 
     try {
       const res = await fetch(`${API_BASE}/api/login`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -79,6 +80,7 @@ if (registerForm) {
 
     try {
       const res = await fetch(`${API_BASE}/api/register`, {
+
         method: "POST",
         headers: {
           "Content-Type": "application/json",

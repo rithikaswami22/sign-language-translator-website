@@ -12,6 +12,14 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "translator")));
 app.use(express.static(path.join(__dirname, "public")));
+// Serve HTML files sitting in the root folder automatically
+app.use(express.static(__dirname));
+
+// Route the base landing domain URL straight to your login page
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "login.html"));
+});
+
 // SQLite database file in project root
 const db = new sqlite3.Database(path.join(__dirname, "users.db"));
 const DATA_FILES = {

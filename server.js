@@ -12,13 +12,23 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "translator")));
 app.use(express.static(path.join(__dirname, "public")));
-// Serve HTML files sitting in the root folder automatically
-app.use(express.static(__dirname));
+// Tell Express to serve root assets natively
+app.use(express.static("."));
 
-// Route the base landing domain URL straight to your login page
+// Point the default route directly to the local file string
 app.get("/", (req, res) => {
-    res.sendFile(path.join(__dirname, "login.html"));
+    res.sendFile("login.html", { root: "." });
 });
+
+// Add explicit fallbacks for your primary interface pages
+app.get("/login.html", (req, res) => {
+    res.sendFile("login.html", { root: "." });
+});
+
+app.get("/home.html", (req, res) => {
+    res.sendFile("home.html", { root: "." });
+});
+
 
 // SQLite database file in project root
 const db = new sqlite3.Database(path.join(__dirname, "users.db"));

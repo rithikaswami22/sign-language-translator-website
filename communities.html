@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Communities ISL Translator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body data-protected="true" class="community-page">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo">ISL Translator</span>
+        </div>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="translate.html">Translate</a></li>
+            <li><a href="practice.html">Practice</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="communities.html" class="active">Communities</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="login.html" class="nav-login-btn" id="nav-auth-btn">Log in</a>
+        </div>
+    </nav>
+
+    <main class="content-page">
+        <header class="community-hero">
+            <div class="community-hero-inner">
+                <h1> ISL Kids Community </h1>
+                <p>Happy Learning Kids</p>
+            </div>
+        </header>
+
+        <section class="community-section">
+            <div class="video-grid community-grid" id="videoGrid"></div>
+        </section>
+    </main>
+
+    <footer class="community-footer">
+        - Have Fun & Learn Together -
+    </footer>
+
+    <script src="nav.js"></script>
+    <script src="session.js"></script>
+    <script>
+        async function loadCommunityVideos() {
+            const grid = document.getElementById("videoGrid");
+            grid.innerHTML = "";
+            try {
+                const res = await fetch("/api/videos");
+                const data = await res.json();
+                if (!res.ok || !data.length) {
+                    grid.innerHTML = "<div class='news-empty'>No videos available yet.</div>";
+                    return;
+                }
+                data.forEach((v) => {
+                    const card = document.createElement("div");
+                    card.className = "video-card";
+                    card.innerHTML = `
+                        <iframe src="${v.youtube}" title="${v.title}" allowfullscreen></iframe>
+                        <div class="title">${v.title}</div>
+                    `;
+                    grid.appendChild(card);
+                });
+            } catch (e) {
+                grid.innerHTML = "<div class='news-empty'>Could not load videos.</div>";
+            }
+        }
+
+        loadCommunityVideos();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "headline": "ISL Kids News: Breaking Stories",
+    "description": "Welcome to ISL Kids News! Watch videos of latest stories translated in Indian Sign Language.",
+    "category": "All",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/KrHFr79EqoY?si=fW210AGd5_S9KU9S",
+    "learnSigns": ["NEWS", "KIDS", "ISL"]
+  },
+  {
+    "id": 2,
+    "headline": "After Kite Festivals: Help an Injured Bird",
+    "description": "After kite festivals, some birds get injured. We should help them safely by calling an animal rescue or taking them to a vet.",
+    "category": "Good News",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/lGIpWQ6cWBU",
+    "learnSigns": ["BIRD", "HELP", "SAFE"]
+  },
+  {
+    "id": 3,
+    "headline": "Unknown Facts of Republic Day Parade",
+    "description": "Republic Day Parade is a proud celebration in India. Many teams, soldiers, and cultural groups take part and show India's unity and strength.",
+    "category": "India",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/09EqPGq8XX4",
+    "learnSigns": ["INDIA", "PARADE", "PROUD"]
+  },
+  {
+    "id": 4,
+    "headline": "Coimbatore: Deaf Hero Donates Organs",
+    "description": "In Coimbatore, a deaf accident victim's family donated organs to help other people live. This is a kind and brave decision.",
+    "category": "Inspiration",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/BAM9mn9z77o",
+    "learnSigns": ["HELP", "BRAVE", "KIND"]
+  },
+  {
+    "id": 5,
+    "headline": "Budget Highlights 2026: No Change in Tax Slabs, High-Speed Rail & More | ISH News",
+    "description": "The 2026 budget keeps tax slabs unchanged and focuses on high-speed rail projects, infrastructure growth, and other key economic measures.",
+    "category": "Finance",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/763d9AbHmoE?si=84T3Qtvp9rAmp-1z",
+    "learnSigns": ["BUDGET", "TAX", "RAIL", "ECONOMY"]
+  },
+  {
+    "id": 6,
+    "headline": "Maharashtra Deputy CM Ajit Pawar Dies in a Plane Crash | ISH News",
+    "description": "Tragic news from Maharashtra as Deputy Chief Minister Ajit Pawar died in a plane crash. Stay updated with ISL translations for children.",
+    "category": "India",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/FVVDMi-D-oI?si=ImaMfXoF7ZSQ3_K8",
+    "learnSigns": ["MAHARASHTRA", "CRASH", "TRAGEDY", "LEADER"]
+  },
+  {
+    "id": 7,
+    "headline": "India & Europe Sign 'The Mother of All Deals' | ISH News",
+    "description": "India and Europe have signed a historic agreement dubbed 'The Mother of All Deals'. Watch the ISL-translated coverage for kids.",
+    "category": "World",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/LTdwnUbzBw4?si=XePq2j0AoUnkuHhL",
+    "learnSigns": ["INDIA", "EUROPE", "DEAL", "HISTORIC"]
+  },
+  {
+    "id": 8,
+    "headline": "9 Rarest Things You Will Ever See | ISH News",
+    "description": "Explore 9 of the rarest and most amazing things you might ever see in the world. ISL-translated for kids to learn and enjoy.",
+    "category": "Science",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/jNiFmmidxLs?si=Q5CB1YwT6ApkKMaR",
+    "learnSigns": ["RARE", "AMAZING", "DISCOVER", "SCIENCE"]
+  },
+  {
+    "id": 9,
+    "headline": "Why And How Do Earthquakes Occur? | ISH News",
+    "description": "Learn why and how earthquakes happen, explained simply for kids with ISL translations for better understanding.",
+    "category": "Science",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/_r3-3XO9HYw?si=ZFGrlMx_7YWAMfP8",
+    "learnSigns": ["EARTHQUAKE", "SHAKE", "SCIENCE", "NATURE"]
+  },
+  {
+    "id": 10,
+    "headline": "Will US President Trump Impose 500% Tariffs on India? | ISH News",
+    "description": "News about possible high tariffs by US President Trump on India, explained simply for kids with ISL translations.",
+    "category": "World",
+    "date": "02 Feb 2026",
+    "level": "Easy",
+    "video": "https://www.youtube.com/embed/gfiXrxdexR4?si=qXwbGGCUTSbI_kNF",
+    "learnSigns": ["USA", "INDIA", "TARIFF", "TRADE"]
+  }
+]

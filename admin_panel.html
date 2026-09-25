@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h2>Admin Panel ✅</h2>
+  <a href="/admin/logout">Logout</a>
+
+  <hr>
+
+  <!-- ADD VIDEO -->
+  <h3>Add Learning Video 🎥</h3>
+  <form method="POST" action="/admin/add_video">
+    <input type="number" name="id" placeholder="ID" required>
+    <input type="text" name="title" placeholder="Video Title" required>
+    <input type="text" name="youtube" placeholder="YouTube Embed Link" required>
+    <button type="submit">Add Video</button>
+  </form>
+
+  <h3>All Videos</h3>
+  <ul>
+    {% for v in videos %}
+      <li>
+        <b>{{ v.title }}</b>
+        <a href="/admin/edit_video/{{ v.id }}">Edit</a>
+        <a href="/admin/delete_video/{{ v.id }}">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <hr>
+
+  <!-- ADD NEWS -->
+  <h3>Add News 📰</h3>
+  <form method="POST" action="/admin/add_news">
+    <input type="number" name="id" placeholder="ID" required>
+    <input type="text" name="headline" placeholder="Headline" required>
+    <input type="text" name="description" placeholder="Description" required>
+    <button type="submit">Add News</button>
+  </form>
+
+  <h3>All News</h3>
+  <ul>
+    {% for n in news %}
+      <li>
+        <b>{{ n.headline }}</b>
+        <a href="/admin/edit_news/{{ n.id }}">Edit</a>
+        <a href="/admin/delete_news/{{ n.id }}">Delete</a>
+      </li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>

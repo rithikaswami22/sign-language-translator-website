@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Detection</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0"></script>
+
+    <script src="./detection.js?v=15" defer></script>
+</head>
+
+<body data-protected="true">
+
+<!-- 🔥 NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="logo">ISL Translator</span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="translate.html" class="active">Translate</a></li>
+        <li><a href="practice.html">Practice</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="communities.html">Communities</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-right">
+        <a href="login.html" class="nav-login-btn" id="nav-auth-btn">Log in</a>
+    </div>
+</nav>
+
+<!-- 🟣 DETECTION SECTION -->
+<section class="detect-wrapper">
+
+    <h1 class="section-title">Live Detection</h1>
+
+    <div class="detect-container">
+
+        <!-- Camera Box -->
+        <div class="camera-box">
+            <video id="video" autoplay playsinline></video>
+        </div>
+
+        <!-- Results Box -->
+        <div class="results-box">
+            <h2>Status:</h2>
+            <p id="camera-status" class="med-txt">Camera: idle</p>
+            <p id="model-status" class="med-txt">Model: idle</p>
+
+            <h2>Detected Letter:</h2>
+            <p id="predicted-letter" class="big-txt">--</p>
+            <div class="top3-select">
+                <label for="top3Select">Top 3 (pick one):</label>
+                <select id="top3Select" class="dropdown"></select>
+                <button id="useTop3Btn" class="button-secondary">Use Selected</button>
+            </div>
+            <div class="detect-toggles">
+                <label><input type="checkbox" id="cropToggle" checked> Crop to hand</label>
+                <label><input type="checkbox" id="mirrorToggle"> Mirror input</label>
+            </div>
+
+            <div class="top3-select" style="margin-top: 14px;">
+                <label for="cameraSelect">Camera device:</label>
+                <select id="cameraSelect" class="dropdown"></select>
+                <button id="refreshCamerasBtn" class="button-secondary">Refresh</button>
+            </div>
+
+            <h3 style="margin-top: 20px;">Translate To:</h3>
+            <select id="language-select" class="dropdown">
+                <option>English</option>
+                <option>Hindi</option>
+                <option>Marathi</option>
+                <option>Tamil</option>
+                <option>Telugu</option>
+                <option>Gujarati</option>
+                <option>Bengali</option>
+                <option>French</option>
+                <option>German</option>
+                <option>Russian</option>
+                <option>Arabic</option>
+            </select>
+            <h3 style="margin-top: 20px;">Translated:</h3>
+            <p id="translated-text" class="big-txt">--</p>
+
+        </div>
+
+    </div>
+
+    <!-- Buttons -->
+    <div class="button-row">
+        <button id="startBtn" class="button-primary">Start Camera</button>
+        <button id="stopBtn" class="button-primary">Stop Camera</button>
+        <button id="clearBtn" class="button-secondary">Clear</button>
+    </div>
+
+    <div class="button-row">
+        <input id="videoFile" type="file" accept="video/*" />
+        <button id="useVideoBtn" class="button-secondary">Use Video File</button>
+        <button id="captureBtn" class="button-primary">Capture Letter</button>
+    </div>
+
+</section>
+
+<script src="nav.js"></script>
+<script src="session.js"></script>
+
+</body>
+</html>
